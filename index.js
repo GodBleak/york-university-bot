@@ -21,17 +21,17 @@ bot.use(
 
 bot.command('submitToChannel', ctx => {
 	if(!ctx.message?.reply_to_message) return ctx.reply(`Please reply with this command to the message you'd like to submit`)
-	ctx.telegram.sendCopy(Number(config.chats?.report), ctx.message.reply_to_message, {reply_markup:{InlineKeyboard:[
+	ctx.telegram.sendCopy(Number(config.chats.report), ctx.message.reply_to_message, {reply_markup:{InlineKeyboard:[
 		[
 			{text: 'Send To Channel', data: 'sendToChannel'}, {text: 'Reject submission', data: 'deleteMessage'}
 		]
 	]}})
 })
 bot.action('sendToChannel',ctx => {
-	ctx.telegram.sendCopy( -1001374765591, ctx.callbackQuery?.message)
+	ctx.telegram.sendCopy( -1001374765591, ctx.callbackQuery.message)
 })
 bot.action('deleteMessage', ctx => {
-	ctx.deleteMessage(ctx.callbackQuery?.message?.message_id)
+	ctx.deleteMessage(ctx.callbackQuery.message.message_id)
 })
 bot.catch(logError);
 
