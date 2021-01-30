@@ -38,7 +38,7 @@ const groupsHandler = async ({ replyWithHTML }) => {
 
 	const entries = TgHtml.join('\n', groups.map(entry));
 
-	return replyWithHTML(TgHtml.tag`🛠 <b>Groups I manage</b>:\n\n${entries}`, {
+	return replyWithHTML(TgHtml.tag`🛠 <b>Other York University groups</b>:\n\n${entries}`, {
 		disable_web_page_preview: true,
 		reply_markup,
 	}).then(scheduleDeletion());

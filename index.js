@@ -1,6 +1,7 @@
 // @ts-check
 'use strict';
-
+require('dotenv').config()
+process.title = 'yorkUBot'
 process.chdir(__dirname);
 require('ts-node').register({ transpileOnly: true });
 
