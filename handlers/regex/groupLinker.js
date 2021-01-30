@@ -2,8 +2,9 @@
 
 const { hears } = require('telegraf');
 const XRegExp = require('xregexp');
+const path = require('path')
 
-const { managesGroup } = require.main.require('./stores/group');
+const { managesGroup } = require.main.require(path.resolve('./stores/group'));
 
 const { replyId } = require('../../utils/tg');
 
