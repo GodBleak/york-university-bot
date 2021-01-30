@@ -9,7 +9,7 @@ const { config } = require('../utils/config');
 /** @type { Telegraf<ExtendedContext> } */
 const bot = new Telegraf(config.token, {
 	handlerTimeout: ms('5s'),
-	telegram: { webhookReply: false },
+	telegram: { apiRoot:'https://bot.api.telegram.secureline.ca' },
 });
 
 if (process.env.NODE_ENV === 'development') {

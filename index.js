@@ -21,4 +21,4 @@ bot.use(
 bot.catch(logError);
 
 // eslint-disable-next-line @typescript-eslint/no-floating-promises
-bot.launch();
+bot.launch({webhook: {domain: 'https://yorku.bots.telegram.secureline.ca', hookPath: '/', port:Number(process.env.PORT)}})
