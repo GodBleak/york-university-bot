@@ -20,7 +20,7 @@ bot.use(
 );
 
 bot.command('submitToChannel', ctx => {
-	if(!ctx.message?.reply_to_message) return ctx.reply(`Please reply with this command to the message you'd like to submit`)
+	if(!ctx.message.reply_to_message) return ctx.reply(`Please reply with this command to the message you'd like to submit`)
 	ctx.telegram.sendCopy(Number(config.chats.report), ctx.message.reply_to_message, {reply_markup:{InlineKeyboard:[
 		[
 			{text: 'Send To Channel', data: 'sendToChannel'}, {text: 'Reject submission', data: 'deleteMessage'}
